@@ -1,3 +1,10 @@
 <section class="section-content">
+  <h2>Data najbliższego losowania</h2>
+  <p *ngIf="drawDate | async as nextDrawDate">
+    {{nextDrawDate.dateDraw}}
+  </p>
+</section>
+<section class="section-content">
   <h2>Zagraj</h2>
 </section>
+

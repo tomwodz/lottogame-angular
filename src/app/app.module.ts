@@ -7,6 +7,7 @@ import {AppRoutingModule} from "./app-routing.module";
 import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.component';
 import { InformationComponent } from './pages/information/information.component';
 import { PlayComponent } from './pages/play/play.component';
+import {HttpClientModule} from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -17,7 +18,7 @@ import { PlayComponent } from './pages/play/play.component';
     PlayComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule
+    BrowserModule, AppRoutingModule, HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
