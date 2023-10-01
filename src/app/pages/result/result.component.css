@@ -1,1 +1,15 @@
+.ticketId {
+  display: block;
+  margin: 10px auto;
+  width: 80%;
+  text-align: center;
+}
 
+.ng-invalid.ng-touched:not(form) {
+  border: 1px solid #8b0000;
+}
+
+.error {
+  background-color: #8b0000;;
+  color: #FFFFFF;
+}

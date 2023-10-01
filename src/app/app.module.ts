@@ -8,6 +8,7 @@ import { PageNotFoundComponent } from './pages/page-not-found/page-not-found.com
 import { InformationComponent } from './pages/information/information.component';
 import { PlayComponent } from './pages/play/play.component';
 import {HttpClientModule} from "@angular/common/http";
+import {FormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -18,7 +19,10 @@ import {HttpClientModule} from "@angular/common/http";
     PlayComponent
   ],
   imports: [
-    BrowserModule, AppRoutingModule, HttpClientModule
+    BrowserModule,
+    AppRoutingModule,
+    HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

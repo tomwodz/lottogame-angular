@@ -1,7 +1,8 @@
 import { Injectable } from '@angular/core';
-import {HttpClient, HttpHeaders, HttpResponse} from "@angular/common/http";
-import {Observable, tap} from "rxjs";
+import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular/common/http";
+import {catchError, Observable, tap, throwError} from "rxjs";
 import {NextDrawDate} from "../models/nextdrawdate";
+import {ResultResponseDto} from "../models/resultresponsedto";
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,20 @@ export class HttpLottoService {
   }
   getNextDrawDate(): Observable<NextDrawDate>{
     return this.http.get<NextDrawDate>(this.url + '/nextdrawdate')
-      .pipe(tap(console.log));
+      .pipe(tap(console.log), catchError(this.handlerErrorNotFound));
   }
 
+  getResultByTicketId (id: string): Observable<ResultResponseDto> {
+    return this.http.get<ResultResponseDto>(this.url + '/results/' + id)
+      .pipe(tap(console.log), catchError(this.handlerErrorNotFound));
+  }
+
+  private handlerErrorNotFound(error: HttpErrorResponse): Observable<never> {
+    console.error(
+      `Message: ${error.message} \n` +
+      `Returned code: ${error.status} \n`
+    );
+    return throwError(() => 'Nie znaleziono.');
+  }
 
 }

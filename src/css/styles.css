@@ -99,3 +99,7 @@ section ~div {
 h2 {
   color: #131670;
 }
+
+.center {
+  text-align: center;
+}
