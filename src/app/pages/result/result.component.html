@@ -1,3 +1,18 @@
 <section class="section-content">
   <h2>Wyniki</h2>
+  <div class="center">
+  <p *ngIf="errorMessage">{{errorMessage}}</p>
+  <form #form="ngForm" (ngSubmit)="getResultById()">
+    <div class="input-field">
+    <input type="text" [(ngModel)]="model.ticketId" name="ticketId" id="ticketId" class="ticketId" #ticketId="ngModel" required/>
+    </div>
+    <ng-container *ngIf="ticketId.invalid && ticketId.touched">
+      <div class="ticketId error">
+        Pole nie może być puste.
+      </div>
+    </ng-container>
+    <button type="submit" class="btn" [disabled]="form.invalid">Sprawdź</button>
+    <button type="reset" class="btn">Wyczyść</button>
+  </form>
+  </div>
 </section>
