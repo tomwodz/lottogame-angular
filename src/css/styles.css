@@ -17,7 +17,7 @@ body {
   height: 280px;
   background-image: url('../img/logo.jpg');
   background-size: cover;
-  background-position: 0 55%;
+  background-position: 0 50%;
   width: 100%;
 }
 
@@ -75,4 +75,27 @@ body {
 .btn:hover{
   color: #131670;
   background-color: #FFFFFF;
+}
+
+section {
+  width: 86%;
+  margin: 30px auto;
+  border-top-left-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+section ~div {
+  margin: 10px auto;
+}
+
+.section-content {
+  background-color: #FFFFFF;;
+  border: 2px solid #e0a438;
+  padding: 25px 25px;
+  color: #000000;
+  box-shadow: -4px -4px 5px #e0a438, 8px 8px 5px #ffc04d;;
+}
+
+h2 {
+  color: #131670;
 }
