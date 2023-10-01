@@ -1,0 +1,11 @@
+p {
+  font-size: 32px;
+  text-align: center;
+  color: #131670;
+  font-weight: 700;
+  text-shadow: 0 0 10px #bdbdbd;
+}
+
+section {
+  background-color: #fcfcc6;
+}
