@@ -3,6 +3,8 @@ import {HttpClient, HttpErrorResponse, HttpHeaders, HttpResponse} from "@angular
 import {catchError, Observable, tap, throwError} from "rxjs";
 import {NextDrawDate} from "../models/nextdrawdate";
 import {ResultResponseDto} from "../models/resultresponsedto";
+import {TicketRequest} from "../models/ticketrequest";
+import {NumberReceiverResponseDto} from "../models/numberreceiverresponsedto";
 
 @Injectable({
   providedIn: 'root'
@@ -19,6 +21,11 @@ export class HttpLottoService {
 
   getResultByTicketId (id: string): Observable<ResultResponseDto> {
     return this.http.get<ResultResponseDto>(this.url + '/results/' + id)
+      .pipe(tap(console.log), catchError(this.handlerErrorNotFound));
+  }
+
+  postTicket(ticket: TicketRequest): Observable<NumberReceiverResponseDto> {
+    return this.http.post(this.url + '/inputNumbers', ticket)
       .pipe(tap(console.log), catchError(this.handlerErrorNotFound));
   }
 

@@ -10,6 +10,7 @@ body {
   font-style: normal;
   text-align: left;
   background-color: #FFFFFF;
+  background-image: linear-gradient(270deg, #fcfcc6 0%, #ffc04d 100%);
 }
 
 .header-img {
@@ -89,17 +90,54 @@ section ~div {
 }
 
 .section-content {
-  background-color: #FFFFFF;;
+  background-color: #fcfcc6;
   border: 2px solid #e0a438;
   padding: 25px 25px;
   color: #000000;
   box-shadow: -4px -4px 5px #e0a438, 8px 8px 5px #ffc04d;;
 }
 
-h2 {
+h1, h2, h3 {
   color: #131670;
 }
 
 .center {
   text-align: center;
 }
+
+.sample-number {
+  display: inline-block;
+  background-color: #FFFFFF;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  margin: 5px 5px;
+  font-size: 30px;
+  text-align: center;
+  line-height: 60px;
+  font-weight: 700;
+  color: #3757c0;
+  box-shadow: 3px 3px 12px #3757c0;
+  cursor: pointer;
+  background-image: linear-gradient(315deg, #dbe4ff 0%, #FFFFFF 74%);
+  transition: 0.3s;
+}
+
+.sample-number:hover {
+  background-color: #7c0000;
+  color: #FFFFFF;
+  box-shadow: 3px 3px 12px #7c0000;
+  background-image: linear-gradient(315deg, #5c0a2c 0%, #a42142 74%);
+}
+
+.hit {
+  background-color: #ffc04d;
+  color: #FFFFFF;
+  box-shadow: 3px 3px 12px #ffc04d;
+  background-image: linear-gradient(315deg, #ffb330 0%, #ffc04d 74%);
+}
+
+.inline-block {
+  display: inline-block;
+}
+
