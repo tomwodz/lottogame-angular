@@ -1,7 +1,7 @@
 export  interface ResponseDto {
 hash: string;
-numbers: Set<BigInt>;
-hitNumbers: Set<BigInt>;
+numbers: Set<Number>;
+hitNumbers: Set<Number>;
 drawDate: string;
 isWinner: boolean;
 }

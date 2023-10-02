@@ -24,25 +24,3 @@
   border: 2px solid #3757c0;
   box-shadow: 0px 0px 8px #3757c0;
 }
-
-
-.sample-number {
-  display: inline-block;
-  background-color: #FFFFFF;
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
-  margin: 5px 5px;
-  font-size: 30px;
-  line-height: 60px;
-  font-weight: 700;
-  box-shadow: 3px 3px 8px #3757c0;
-}
-
-.hit {
-  color: #e0a438;
-}
-
-.inline-block {
-  display: inline-block;
-}

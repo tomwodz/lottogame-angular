@@ -1,10 +1,40 @@
 <section class="section-content">
   <h2>Data najbliższego losowania</h2>
-  <p *ngIf="drawDate | async as nextDrawDate">
+  <p *ngIf="drawDate | async as nextDrawDate" class="date">
     {{nextDrawDate.dateDraw}}
   </p>
+  <h2>Wybrane numery: {{message}}</h2>
+  <div class="center">
+    <div *ngFor="let number of numbersToSend" (click)="delete(number.valueOf())" class="sample-number hit">
+      {{number}}
+    </div>
+  </div>
+  <div class="center">
+    <button (click)="send()" class="btn">Zagraj</button>
+  </div>
+  <div *ngIf="ticketResponse.message">
+    <h2>Twój kupon</h2>
+    <div class="center">
+      <h3>{{ticketResponse.message}}</h3>
+    </div>
+    <div class="sample-ticket">
+      <div>Numer kuponu</div>
+      <div class="result">{{ticketResponse.ticketDto?.hash}}</div>
+      <div>Data losowania</div>
+      <div class="result">{{ticketResponse.ticketDto?.drawDate}}</div>
+      <div>Twoje numery</div>
+      <div *ngFor="let number of ticketResponse.ticketDto?.numbers" class="inline-block">
+        <div class="sample-number">{{number}}</div>
+      </div>
+    </div>
+  </div>
 </section>
 <section class="section-content">
-  <h2>Zagraj</h2>
+  <h2>Zagraj: wybierz 6 różnych numerów z 1-99.</h2>
+  <div class="center">
+  <div *ngFor="let number of numbers" (click)="add(number.valueOf())" class="sample-number">
+  {{number}}
+  </div>
+  </div>
 </section>
 
