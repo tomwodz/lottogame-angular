@@ -3,16 +3,35 @@
   <div class="center">
   <p *ngIf="errorMessage">{{errorMessage}}</p>
   <form #form="ngForm" (ngSubmit)="getResultById()">
-    <div class="input-field">
-    <input type="text" [(ngModel)]="model.ticketId" name="ticketId" id="ticketId" class="ticketId" #ticketId="ngModel" required/>
+    <div>
+    <input type="text" [(ngModel)]="model.ticketId" name="ticketId" id="ticketId" class="ticket-id" #ticketId="ngModel" required/>
     </div>
     <ng-container *ngIf="ticketId.invalid && ticketId.touched">
-      <div class="ticketId error">
+      <div class="ticket-id error">
         Pole nie może być puste.
       </div>
     </ng-container>
     <button type="submit" class="btn" [disabled]="form.invalid">Sprawdź</button>
     <button type="reset" class="btn">Wyczyść</button>
   </form>
+  </div>
+</section>
+<section class="section-content" *ngIf="resultByTicketId.message">
+  <h2>Twój kupon</h2>
+  <div class="center">
+    <p>{{resultByTicketId.message}}</p>
+  </div>
+  <div class="sample-result">
+    <div>Numer kuponu</div>
+    <div>{{resultByTicketId.responseDto?.hash}}</div>
+    <div>Twoje liczby</div>
+    <div *ngFor="let number of resultByTicketId.responseDto?.numbers" class="inline-block">
+      <div class="sample-number">{{number}}</div>
+    </div>
+    <div>Trafione liczby</div>
+    <div *ngFor="let number of resultByTicketId.responseDto?.hitNumbers" class="inline-block">
+      <div class="sample-number hit">{{number}}</div></div>
+    <div>Czy wygrałeś?</div>
+    <div>{{resultByTicketId.responseDto?.isWinner}}</div>
   </div>
 </section>
