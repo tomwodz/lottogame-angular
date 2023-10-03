@@ -25,7 +25,7 @@ export class HttpLottoService {
   }
 
   postTicket(ticket: TicketRequest): Observable<NumberReceiverResponseDto> {
-    return this.http.post(this.url + '/inputNumbers', ticket)
+    return this.http.post<NumberReceiverResponseDto>(this.url + '/inputNumbers', ticket)
       .pipe(tap(console.log), catchError(this.handlerErrorNotFound));
   }
 

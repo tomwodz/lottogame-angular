@@ -6,7 +6,7 @@
 
 body {
   font-size: 14px;
-  font-family: Verdana,  serif;
+  font-family: Roboto, Verdana,  serif;
   font-style: normal;
   text-align: left;
   background-color: #FFFFFF;
@@ -29,13 +29,13 @@ body {
   transform: translate(-50%,-50%);
   color: #FFFFFF;
   text-align: center;
-  text-shadow: 0px 0px 8px #000000;
+  text-shadow: 0px 0px 8px #131670;
   z-index: 5;
 }
 
 .header-text h1 {
   margin-bottom: 5px;
-  font-size: 500%;
+  font-size: 400%;
   color: #ffb228;
   text-transform: uppercase;
   letter-spacing: 1px;
@@ -50,6 +50,7 @@ body {
 
 .nav {
   text-align: center;
+  font-weight: 700;
   border-top: 6px solid #131670;
   background-color: #ffc04d;
   bottom: 0;
@@ -57,7 +58,8 @@ body {
 }
 
 .btn {
-  font-weight: 600;
+  font-family: Roboto, Verdana,  serif;
+  font-weight: 700;
   font-size: 16px;
   margin: 5px 10px;
   text-align: center;
@@ -76,6 +78,10 @@ body {
 .btn:hover{
   color: #131670;
   background-color: #FFFFFF;
+}
+
+a {
+  font-size: 16px;
 }
 
 section {

@@ -28,15 +28,16 @@ export class PlayComponent implements OnInit {
   numbersToSend: Set<Number> = new Set<Number>();
   message: string;
   ticketResponse: Partial<NumberReceiverResponseDto> = {};
+
   constructor(private http: HttpLottoService) {
   }
 
-  add(number: Number){
-    if(!this.numbersToSend.has(number) && this.numbersToSend.size < 6){
+  add(number: Number) {
+    if (!this.numbersToSend.has(number) && this.numbersToSend.size < 6) {
       this.numbersToSend.add(number);
       this.numbers.delete(number);
     }
-      this.message = this.numbersToSend.size.toString() + ' z 6.';
+    this.message = this.numbersToSend.size.toString() + ' z 6.';
   }
 
   delete(number: Number) {
@@ -51,11 +52,15 @@ export class PlayComponent implements OnInit {
         inputNumbers: []
       }
       this.numbersToSend.forEach(
-        value => ticketRequest.inputNumbers.push(value)
+        ticket => {
+          ticketRequest.inputNumbers.push(ticket)
+        }
       );
       console.log(ticketRequest);
       this.http.postTicket(ticketRequest).subscribe(
-        value => this.ticketResponse = value
+        ticket => {
+          this.ticketResponse = ticket
+        }
       );
       this.clear();
     } else {
@@ -63,7 +68,7 @@ export class PlayComponent implements OnInit {
     }
   }
 
-  clear(){
+  clear() {
     this.numbersToSend.forEach(
       value => this.numbers.add(value)
     );
